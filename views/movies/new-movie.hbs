@@ -1,0 +1,30 @@
+<h2>Añade tu movie!</h2>
+
+<form method="POST" action="/movies/create">
+
+<div class="row g-3 align-items-center">
+
+    <label for="title" class="col-form-label">title</label>
+    <input type="text" name="title" class="form-control">
+    
+    <label for="genre" class="col-form-label">genre</label>
+    <input type="text" name="genre" class="form-control">
+
+    <label for="plot" class="col-form-label">plot</label>
+    <input type="text" name="plot" class="form-control">
+    
+    <label for="cast" class="col-form-label">cast</label>
+
+    <select name="cast"> {{!-- propiedad para seleccionar varios elementos--}}
+      
+      {{#each allCelebrities}}
+        {{!-- create option TAG --}}
+        <option value="{{this._id}}">{{this.name}}</option>
+
+      {{/each}}
+
+    </select>
+    
+    <button class="btn btn-outline-success">Añadir Movie!</button>
+</div>
+</form>

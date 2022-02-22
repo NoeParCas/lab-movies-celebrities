@@ -1,0 +1,11 @@
+<h2>Lista de Movies</h2>
+
+<div class="list-group">
+
+{{#each allMovies}}
+
+<a class="list-group-item list-group-item-action" href="/movies/{{this.id}}/details">{{this.title}}</a>
+
+{{/each}}
+
+</div>

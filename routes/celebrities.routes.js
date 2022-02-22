@@ -4,6 +4,7 @@ const router = require("express").Router()
 router.get('/', (req, res, next) => {
     CelebrityModel.find()
     .then((allCelebrities) => {
+        console.log(allCelebrities);
         res.render("celebrities/celebrities.hbs", {allCelebrities})
     })
     .catch((err) => {
@@ -28,7 +29,7 @@ router.get('/create', (req, res, next) => {
 router.post('/create', (req, res, next) =>{
     CelebrityModel.create({
         name: req.body.name,
-        ocupation: req.body.ocupation,
+        occupation: req.body.occupation,
         catchPhrase: req.body.catchPhrase,
     })
     .then((createCeleb) => {
@@ -38,6 +39,8 @@ router.post('/create', (req, res, next) =>{
         res.redirect("/celebrities/new-celebrity")
     })
 })
+
+
 
 
 module.exports = router;

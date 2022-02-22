@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-header">
+  <h4>Title: {{oneMovie.title}}</h4>
+  </div>
+
+  <div class="card-body">
+  <p>Genre: {{oneMovie.genre}}</p>
+  </div>
+
+  <div class="card-body">
+  <p>Plot: {{oneMovie.plot}}</p>
+  </div>
+  </div>
+  {{#each oneMovie.cast}}
+  <p>Name: {{this.name}} </p>
+  <p>Occupation: {{this.occupation}}</p>
+  <p>catchPhrase: {{this.catchPhrase}}</p>
+  {{/each}}
+  </div>
+ 
+  <a href="/movies/{{oneMovie._id}}/edit">
+    <button class="btn btn-outline-warning">Edit</button>
+  </a>
+  
+  <form method="POST" action="/movies/{{oneMovie._id}}/delete">
+  <button class="btn btn-outline-danger">Delete</button>
+  </form>
+ 
+
+</div>
