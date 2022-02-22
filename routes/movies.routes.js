@@ -85,7 +85,7 @@ router.get("/:id/edit", async (req, res, next) => {
 
 // POST "/movies/:id/edit" 
 
-router.post("/:id/edit", (req, res, next) => {
+router.post("/:id", (req, res, next) => {
   
   const {id} = req.params;
 
@@ -96,7 +96,7 @@ router.post("/:id/edit", (req, res, next) => {
     title, 
     genre, 
     plot,
-    
+    cast
   })
   .then((updatedMovie) => {
     console.log(updatedMovie);
